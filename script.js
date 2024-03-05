@@ -11,7 +11,7 @@ for (let i = 1; i <= numberOfInputs; i++) {
     input.addEventListener("input", onInput);
     input.addEventListener("keyup", onKeyUp);
 	input.addEventListener("keypress", onBackSpace);
-	input.addEventListener("keyup", onKeyUp);
+	input.addEventListener("keyup", onEnter);
 
     codeContainer.appendChild(input);
 }
