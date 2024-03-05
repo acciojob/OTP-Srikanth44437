@@ -2,6 +2,20 @@ const codeContainer = document.querySelector(".code-container");
 const numberOfInputs = 8;
 let lastEnteredInputElement = null;
 
+
+for (let i = 1; i <= numberOfInputs; i++) {
+    const input = document.createElement("input");
+    input.className = "code";
+    input.maxLength = 1;
+
+    input.addEventListener("input", onInput);
+    input.addEventListener("keyup", onKeyUp);
+	input.addEventListener("keypress", onBackSpace);
+	input.addEventListener("keyup", onKeyUp);
+
+    codeContainer.appendChild(input);
+}
+
 function onInput(event) {
     const currentElement = event.target;
     console.log("event triggered");
@@ -31,13 +45,3 @@ function onKeyUp(e) {
     }
 }
 
-for (let i = 1; i <= numberOfInputs; i++) {
-    const input = document.createElement("input");
-    input.className = "code";
-    input.maxLength = 1;
-
-    input.addEventListener("input", onInput);
-    input.addEventListener("keyup", onKeyUp);
-
-    codeContainer.appendChild(input);
-}
